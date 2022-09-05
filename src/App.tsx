@@ -1,16 +1,26 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.scss";
+import { Link, Outlet } from "react-router-dom";
+import { HeaderComponent } from "./components/header";
+import { FooterComponent } from "./components/footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
+    <div>
+      <HeaderComponent />
+      {/* <nav>
+        <ul>
+          <li>
+            <Link to="services">Services</Link>
+          </li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+      </nav> */}
+      <div className="content">
+        <Outlet />
+      </div>
+      <FooterComponent />
     </div>
   );
 }
