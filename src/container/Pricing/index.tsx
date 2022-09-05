@@ -53,6 +53,27 @@ const PricingContainer = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 350 112.35"
                   >
+                    <defs>
+                      <style>
+                        {`.color-1 {
+                        fill: #2bdbdc;
+                        isolation: isolate;
+                      }
+                      .cls-1 {
+                        opacity: 0.1;
+                      }
+                      .cls-2 {
+                        opacity: 0.2;
+                      }
+                      .cls-3 {
+                        opacity: 0.4;
+                      }
+                      .cls-4 {
+                        opacity: 0.6;
+                      }`}
+                      </style>
+                    </defs>
+
                     <title>bottom-part1</title>
                     <g id="bottom-part">
                       <g id="Group_747" data-name="Group 747">
@@ -131,6 +152,26 @@ const PricingContainer = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 350 112.35"
                   >
+                    <defs>
+                      <style>
+                        {`.color-2 {
+                        fill: #0067f4;
+                        isolation: isolate;
+                      }
+                      .cls-1 {
+                        opacity: 0.1;
+                      }
+                      .cls-2 {
+                        opacity: 0.2;
+                      }
+                      .cls-3 {
+                        opacity: 0.4;
+                      }
+                      .cls-4 {
+                        opacity: 0.6;
+                      }`}
+                      </style>
+                    </defs>
                     <title>bottom-part1</title>
                     <g id="bottom-part">
                       <g id="Group_747" data-name="Group 747">
@@ -209,6 +250,26 @@ const PricingContainer = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 350 112.35"
                   >
+                    <defs>
+                      <style>
+                        {`.color-3 {
+                        fill: #4da422;
+                        isolation: isolate;
+                      }
+                      .cls-1 {
+                        opacity: 0.1;
+                      }
+                      .cls-2 {
+                        opacity: 0.2;
+                      }
+                      .cls-3 {
+                        opacity: 0.4;
+                      }
+                      .cls-4 {
+                        opacity: 0.6;
+                      }`}
+                      </style>
+                    </defs>
                     <title>bottom-part1</title>
                     <g id="bottom-part">
                       <g id="Group_747" data-name="Group 747">
