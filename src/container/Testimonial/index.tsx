@@ -1,3 +1,6 @@
+import { Carousel } from "antd";
+import "./testimonial.scss";
+
 const TestimonialContainer = () => {
   return (
     <>
@@ -17,8 +20,16 @@ const TestimonialContainer = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="row testimonial-active">
-                <div className="col-lg-4">
-                  <div className="single-testimonial mt-30 mb-30 text-center">
+                <Carousel
+                  slidesToShow={3}
+                  centerMode={true}
+                  draggable={true}
+                  swipeToSlide={true}
+                  touchThreshold={10}
+                  focusOnSelect={true}
+                  className="track-slide-container"
+                >
+                  <div className="single-testimonial text-center">
                     <div className="testimonial-image">
                       <img src="assets/images/author-3.jpg" alt="Author" />
                     </div>
@@ -33,9 +44,8 @@ const TestimonialContainer = () => {
                       <span className="sub-title">CEO, GrayGrids</span>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="single-testimonial mt-30 mb-30 text-center">
+
+                  <div className="single-testimonial text-center">
                     <div className="testimonial-image">
                       <img src="assets/images/author-1.jpg" alt="Author" />
                     </div>
@@ -50,9 +60,8 @@ const TestimonialContainer = () => {
                       <span className="sub-title">Lead Designer, UIdeck</span>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="single-testimonial mt-30 mb-30 text-center">
+
+                  <div className="single-testimonial text-center">
                     <div className="testimonial-image">
                       <img src="assets/images/author-2.jpg" alt="Author" />
                     </div>
@@ -67,9 +76,8 @@ const TestimonialContainer = () => {
                       <span className="sub-title">CEO, SpaceX</span>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="single-testimonial mt-30 mb-30 text-center">
+
+                  <div className="single-testimonial text-center">
                     <div className="testimonial-image">
                       <img src="assets/images/author-4.jpg" alt="Author" />
                     </div>
@@ -84,7 +92,7 @@ const TestimonialContainer = () => {
                       <span className="sub-title">CEO, MakerFlix</span>
                     </div>
                   </div>
-                </div>
+                </Carousel>
               </div>
             </div>
           </div>
