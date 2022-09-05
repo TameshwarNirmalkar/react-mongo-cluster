@@ -1,4 +1,26 @@
+import { FormEvent, useState } from "react";
+
 const ContactContainer = () => {
+  const [formEl, setFormEl] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    phone: "",
+    message: "",
+  });
+
+  const onInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormEl({ ...formEl, [name]: value });
+  };
+
+  const onFormSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log("Value: ", formEl);
+  };
+
   return (
     <>
       <section id="contact" className="contact-area">
@@ -17,12 +39,7 @@ const ContactContainer = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="contact-form">
-                <form
-                  id="contact-form"
-                  action="assets/contact.php"
-                  method="post"
-                  data-toggle="validator"
-                >
+                <form onSubmit={onFormSubmit}>
                   <div className="row">
                     <div className="col-md-6">
                       <div className="single-form form-group">
@@ -30,7 +47,9 @@ const ContactContainer = () => {
                           type="text"
                           name="name"
                           placeholder="Your Name"
+                          required={true}
                           data-error="Name is required."
+                          onChange={onInputChange}
                         />
                         <div className="help-block with-errors"></div>
                       </div>
@@ -42,6 +61,8 @@ const ContactContainer = () => {
                           name="email"
                           placeholder="Your Email"
                           data-error="Valid email is required."
+                          required={true}
+                          onChange={onInputChange}
                         />
                         <div className="help-block with-errors"></div>
                       </div>
@@ -53,6 +74,8 @@ const ContactContainer = () => {
                           name="subject"
                           placeholder="Subject"
                           data-error="Subject is required."
+                          required={true}
+                          onChange={onInputChange}
                         />
                         <div className="help-block with-errors"></div>
                       </div>
@@ -64,6 +87,8 @@ const ContactContainer = () => {
                           name="phone"
                           placeholder="Phone"
                           data-error="Phone is required."
+                          required={true}
+                          onChange={onInputChange}
                         />
                         <div className="help-block with-errors"></div>
                       </div>
@@ -74,6 +99,8 @@ const ContactContainer = () => {
                           placeholder="Your Mesaage"
                           name="message"
                           data-error="Please, leave us a message."
+                          required={true}
+                          onChange={onInputChange}
                         ></textarea>
                         <div className="help-block with-errors"></div>
                       </div>
