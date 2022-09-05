@@ -7,10 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/index";
 import HomeContainer from "./container/Home";
-import ServicesContainer from "./container/Services";
-import ContactContainer from "./container/Contact";
-import TestimonialContainer from "./container/Testimonial";
-import PricingContainer from "./container/Pricing";
+// import ServicesContainer from "./container/Services";
+// import ContactContainer from "./container/Contact";
+// import TestimonialContainer from "./container/Testimonial";
+// import PricingContainer from "./container/Pricing";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -20,12 +20,12 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />}>
+          <Route path="/*" element={<App />}>
             <Route index element={<HomeContainer />} />
-            <Route path="services/*" element={<ServicesContainer />} />
+            {/* <Route path="services/*" element={<ServicesContainer />} />
             <Route path="pricing/*" element={<PricingContainer />} />
             <Route path="testimonial/*" element={<TestimonialContainer />} />
-            <Route path="contact/*" element={<ContactContainer />} />
+            <Route path="contact/*" element={<ContactContainer />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,7 +1,14 @@
 import { memo } from "react";
-import { Link, NavLink } from "react-router-dom";
+// import { Link, Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 export const HeaderComponent = memo(() => {
+  const navConfig = {
+    activeClass: "active",
+    spy: true,
+    smooth: true,
+    duration: 500,
+  };
   return (
     <header className="header-area">
       <div className="navgition navgition-transparent">
@@ -31,54 +38,29 @@ export const HeaderComponent = memo(() => {
                 >
                   <ul className="navbar-nav m-auto">
                     <li className="nav-item">
-                      <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="home" {...navConfig}>
                         HOME
-                      </NavLink>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <NavLink
-                        to="/services"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="services" {...navConfig}>
                         SERVICES
-                      </NavLink>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <NavLink
-                        to="/pricing"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="pricing" {...navConfig}>
                         PRICING
-                      </NavLink>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <NavLink
-                        to="/testimonial"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="testimonial" {...navConfig}>
                         Testimonial
-                      </NavLink>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <NavLink
-                        to="/contact"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="contact" {...navConfig}>
                         CONTACT
-                      </NavLink>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -86,44 +68,24 @@ export const HeaderComponent = memo(() => {
                   <span>FOLLOW US</span>
                   <ul>
                     <li>
-                      <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="home" activeClass="active">
                         <i className="lni-facebook-filled"></i>
-                      </NavLink>
+                      </Link>
                     </li>
                     <li>
-                      <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="home" activeClass="active">
                         <i className="lni-twitter-original"></i>
-                      </NavLink>
+                      </Link>
                     </li>
                     <li>
-                      <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="home" activeClass="active">
                         <i className="lni-instagram-original"></i>
-                      </NavLink>
+                      </Link>
                     </li>
                     <li>
-                      <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                          isActive ? "page-scroll active" : "page-scroll"
-                        }
-                      >
+                      <Link to="home" activeClass="active">
                         <i className="lni-linkedin-original"></i>
-                      </NavLink>
+                      </Link>
                     </li>
                   </ul>
                 </div>
