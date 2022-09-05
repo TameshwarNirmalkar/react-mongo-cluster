@@ -2477,7 +2477,7 @@ p {
   display: inline-block;
   margin: 10px 10px 0;
 }
-.header-hero .header-content .header-btn li a.main-btn {
+.header-hero .header-content .header-btn li .main-btn {
   border-radius: 50px;
   overflow: hidden;
   background-color: #fff;
@@ -2487,13 +2487,13 @@ p {
   border: 0;
   line-height: 50px;
 }
-.header-hero .header-content .header-btn li a.main-btn i {
+.header-hero .header-content .header-btn li .main-btn i {
   margin-left: 8px;
 }
-.header-hero .header-content .header-btn li a.main-btn.rounded-four {
+.header-hero .header-content .header-btn li .main-btn.rounded-four {
   padding: 0 32px;
 }
-.header-hero .header-content .header-btn li a.main-btn.rounded-four:hover {
+.header-hero .header-content .header-btn li .main-btn.rounded-four:hover {
   -webkit-box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.16);
   -moz-box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.16);
   box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.16);

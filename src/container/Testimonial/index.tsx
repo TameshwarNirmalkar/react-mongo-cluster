@@ -26,7 +26,9 @@ const TestimonialContainer = () => {
                   draggable={true}
                   swipeToSlide={true}
                   touchThreshold={10}
-                  focusOnSelect={true}
+                  focusOnSelect={false}
+                  arrows={true}
+                  centerPadding={"0px"}
                   className="track-slide-container"
                 >
                   <div className="single-testimonial text-center">

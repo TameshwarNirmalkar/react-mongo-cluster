@@ -30,6 +30,9 @@
   }
 
   .track-slide-container {
+    .slick-list {
+      padding: 0px;
+    }
     .slick-slide {
       background-color: #fff;
       padding: 30px;
