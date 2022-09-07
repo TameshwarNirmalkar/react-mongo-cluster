@@ -10,8 +10,22 @@ import TestimonialContainer from "./container/Testimonial";
 import ContactContainer from "./container/Contact";
 import { CallToAction } from "./components/call-to-action/call-to-action";
 import { ClientLogo } from "./components/client-logo";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { updateIsScrollHeight } from "./store/slices/userSlice";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      dispatch(updateIsScrollHeight(window.scrollY > 96));
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   return (
     <div>
       <HeaderComponent />

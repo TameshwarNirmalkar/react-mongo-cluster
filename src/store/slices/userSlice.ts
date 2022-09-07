@@ -4,6 +4,7 @@ const initialState = {
   error: null,
   status: "IDEAL",
   user: null,
+  isScrollValueMoreThanHeaderHeight: false,
 };
 
 export const UserSlice = createSlice({
@@ -23,8 +24,12 @@ export const UserSlice = createSlice({
     updateUser(state, { payload }) {
       state.user = payload || null;
     },
+    updateIsScrollHeight(state, { payload }) {
+      state.isScrollValueMoreThanHeaderHeight = payload;
+    },
   },
 });
 
-export const { setOnFailure, updateUser, logout } = UserSlice.actions;
+export const { setOnFailure, updateUser, logout, updateIsScrollHeight } =
+  UserSlice.actions;
 export default UserSlice.reducer;
