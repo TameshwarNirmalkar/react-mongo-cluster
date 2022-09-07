@@ -1,0 +1,5 @@
+./assets
+public
+node_modules
+*.css
+*.svg

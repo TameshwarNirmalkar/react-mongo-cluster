@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 
-const ContactContainer = () => {
+const ContactContainer = (): JSX.Element => {
   const [formEl, setFormEl] = useState({
     name: "",
     email: "",
@@ -11,12 +11,12 @@ const ContactContainer = () => {
 
   const onInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     const { name, value } = e.target;
     setFormEl({ ...formEl, [name]: value });
   };
 
-  const onFormSubmit = (e: FormEvent) => {
+  const onFormSubmit = (e: FormEvent): void => {
     e.preventDefault();
     console.log("Value: ", formEl);
   };

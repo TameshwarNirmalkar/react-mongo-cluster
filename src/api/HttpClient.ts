@@ -31,19 +31,19 @@ interface ConfigInterfaceI {
 }
 
 class HttpClient {
-  getAccessToken() {
+  getAccessToken(): string {
     return `Bearer `;
   }
 
-  getClientInfo() {
-    let data: any = "null";
+  getClientInfo() : object {
+    const data = "null";
     return JSON.parse(data);
   }
 
   async get<T = any, R = AxiosResponse<T>>(
     url: string,
     config?: ConfigInterfaceI
-  ) {
+  ): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
       method: "GET",
       url,
@@ -56,7 +56,7 @@ class HttpClient {
     url: string,
     data?: any,
     config?: ConfigInterfaceI
-  ) {
+  ) : Promise<any> {
     return await instance.request<AxiosRequestConfig>({
       method: "POST",
       url,
@@ -70,7 +70,7 @@ class HttpClient {
     url: string,
     data?: any,
     config?: ConfigInterfaceI
-  ) {
+  ): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
       method: "PUT",
       url,
@@ -84,7 +84,7 @@ class HttpClient {
     url: string,
     data?: any,
     config?: ConfigInterfaceI
-  ) {
+  ): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
       method: "PATCH",
       url,
@@ -98,7 +98,7 @@ class HttpClient {
     url: string,
     data?: any,
     config?: ConfigInterfaceI
-  ) {
+  ): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
       method: "DELETE",
       url,

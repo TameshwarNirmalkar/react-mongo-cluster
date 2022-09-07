@@ -1,7 +1,7 @@
 import { Carousel } from "antd";
 import "./testimonial.scss";
 
-const TestimonialContainer = () => {
+const TestimonialContainer = (): JSX.Element => {
   return (
     <>
       <section id="testimonial" className="testimonial-area">

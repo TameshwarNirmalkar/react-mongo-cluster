@@ -1,6 +1,5 @@
 import { memo } from "react";
 import { shallowEqual, useSelector } from "react-redux";
-// import { Link, Link } from "react-router-dom";
 import { Link } from "react-scroll";
 
 export const HeaderComponent = memo(() => {

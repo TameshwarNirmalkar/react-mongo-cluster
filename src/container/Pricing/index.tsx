@@ -1,4 +1,4 @@
-const PricingContainer = () => {
+const PricingContainer = (): JSX.Element => {
   return (
     <>
       <section id="pricing" className="pricing-area">
@@ -155,7 +155,7 @@ const PricingContainer = () => {
                     <defs>
                       <style>
                         {`.color-2 {
-                        fill: #0067f4;
+                        fill: #9768fc;
                         isolation: isolate;
                       }
                       .cls-1 {
