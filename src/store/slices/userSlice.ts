@@ -1,35 +1,35 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { UserStateI } from './constant';
 
-const initialState = {
+const initialState: UserStateI = {
   error: null,
-  status: "IDEAL",
+  status: 'IDEAL',
   user: null,
   isScrollValueMoreThanHeaderHeight: false,
 };
 
 export const UserSlice = createSlice({
-  name: "USER",
+  name: 'USER',
   initialState,
   reducers: {
-    logout(state, { payload }) {
+    logout(state) {
       state.user = null;
-      state.status = "IDEAL";
+      state.status = 'IDEAL';
       state.error = null;
     },
-    setOnFailure(state, { payload }) {
+    setOnFailure(state, { payload }: PayloadAction<string>) {
       state.user = null;
       state.error = payload;
-      state.status = "FAILURE";
+      state.status = 'FAILURE';
     },
-    updateUser(state, { payload }) {
+    updateUser(state, { payload }: PayloadAction<UserStateI>) {
       state.user = payload || null;
     },
-    updateIsScrollHeight(state, { payload }) {
+    updateIsScrollHeight(state, { payload }: PayloadAction<boolean>) {
       state.isScrollValueMoreThanHeaderHeight = payload;
     },
   },
 });
 
-export const { setOnFailure, updateUser, logout, updateIsScrollHeight } =
-  UserSlice.actions;
+export const { setOnFailure, updateUser, logout, updateIsScrollHeight } = UserSlice.actions;
 export default UserSlice.reducer;

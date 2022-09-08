@@ -1,10 +1,12 @@
 import { memo } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { Link } from "react-scroll";
+import { UserStateI } from "../../store/slices/constant";
+
 
 export const HeaderComponent = memo(() => {
   const { isScrollValueMoreThanHeaderHeight } = useSelector(
-    (state: any) => ({ ...state.user }),
+    (state: {user: UserStateI}) => ({ ...state.user }),
     shallowEqual
   );
   const navConfig = {
