@@ -1,10 +1,10 @@
 import { Modal } from "antd";
 import { useState } from "react";
 
-const HomeContainer = () => {
+const HomeContainer = (): JSX.Element => {
   const [open, setOpen] = useState(false);
 
-  const onPlayVideo = () => {
+  const onPlayVideo = (): void => {
     setOpen(true);
   };
 

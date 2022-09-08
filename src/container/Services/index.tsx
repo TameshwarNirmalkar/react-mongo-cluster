@@ -1,6 +1,6 @@
 import { ServiceRoutes } from "./routes";
 
-const ServicesContainer = () => {
+const ServicesContainer = (): JSX.Element => {
   return (
     <div>
       <ServiceRoutes />
