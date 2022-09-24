@@ -1,26 +1,26 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const instance = axios.create({
-  baseURL: `${process.env.REACT_APP_BASE_ENDPOINT}/api/`,
+  baseURL: `${process.env.REACT_APP_BASE_ENDPOINT}`,
   timeout: 3600,
 });
 
-axios.defaults.headers.common["Authorization"] = `Bearer `;
+axios.defaults.headers.common['Authorization'] = `Bearer `;
 
 instance.interceptors.request.use(
   (req) => {
-    if (axios.defaults.headers.common["Authorization"]) {
+    if (axios.defaults.headers.common['Authorization']) {
       return req;
     } else {
-      throw new Error("Authorization token is not available");
+      throw new Error('Authorization token is not available');
     }
   },
-  (error) => Promise.reject(error.req)
+  (error) => Promise.reject(error.req),
 );
 
 instance.interceptors.response.use(
   (response: AxiosResponse) => response.data,
-  (error: { response: AxiosResponse }) => Promise.reject(error.response)
+  (error: { response: AxiosResponse }) => Promise.reject(error.response),
 );
 
 interface ConfigInterfaceI {
@@ -35,30 +35,23 @@ class HttpClient {
     return `Bearer `;
   }
 
-  getClientInfo() : object {
-    const data = "null";
+  getClientInfo(): object {
+    const data = 'null';
     return JSON.parse(data);
   }
 
-  async get<T = any, R = AxiosResponse<T>>(
-    url: string,
-    config?: ConfigInterfaceI
-  ): Promise<any> {
+  async get<T = any, R = AxiosResponse<T>>(url: string, config?: ConfigInterfaceI): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
-      method: "GET",
+      method: 'GET',
       url,
       headers: { Authorization: this.getAccessToken() },
       ...config,
     });
   }
 
-  async post<T = any, R = AxiosResponse<T>>(
-    url: string,
-    data?: any,
-    config?: ConfigInterfaceI
-  ) : Promise<any> {
+  async post<T = any, R = AxiosResponse<T>>(url: string, data?: any, config?: ConfigInterfaceI): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
-      method: "POST",
+      method: 'POST',
       url,
       data,
       headers: { Authorization: this.getAccessToken() },
@@ -66,13 +59,9 @@ class HttpClient {
     });
   }
 
-  async put<T = any, R = AxiosResponse<T>>(
-    url: string,
-    data?: any,
-    config?: ConfigInterfaceI
-  ): Promise<any> {
+  async put<T = any, R = AxiosResponse<T>>(url: string, data?: any, config?: ConfigInterfaceI): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
-      method: "PUT",
+      method: 'PUT',
       url,
       data,
       headers: { Authorization: this.getAccessToken() },
@@ -80,13 +69,9 @@ class HttpClient {
     });
   }
 
-  async patch<T = any, R = AxiosResponse<T>>(
-    url: string,
-    data?: any,
-    config?: ConfigInterfaceI
-  ): Promise<any> {
+  async patch<T = any, R = AxiosResponse<T>>(url: string, data?: any, config?: ConfigInterfaceI): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
-      method: "PATCH",
+      method: 'PATCH',
       url,
       data,
       headers: { Authorization: this.getAccessToken() },
@@ -94,13 +79,9 @@ class HttpClient {
     });
   }
 
-  async delete<T = any, R = AxiosResponse<T>>(
-    url: string,
-    data?: any,
-    config?: ConfigInterfaceI
-  ): Promise<any> {
+  async delete<T = any, R = AxiosResponse<T>>(url: string, data?: any, config?: ConfigInterfaceI): Promise<any> {
     return await instance.request<AxiosRequestConfig>({
-      method: "DELETE",
+      method: 'DELETE',
       url,
       data,
       headers: { Authorization: this.getAccessToken() },

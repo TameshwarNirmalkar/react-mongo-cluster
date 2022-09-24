@@ -11,13 +11,17 @@ import ContactContainer from './container/Contact';
 import { CallToAction } from './components/call-to-action/call-to-action';
 import { ClientLogo } from './components/client-logo';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { updateIsScrollHeight } from './store/slices/userSlice';
+import { getUserList } from './store/slices/userAction';
+import { ReduxState, useTypedDispatch } from './store';
+import { useSelector } from 'react-redux';
 
-const App = () : JSX.Element => {
-  const dispatch = useDispatch();
+const App = (): JSX.Element => {
+  const dispatch = useTypedDispatch();
+  const { isLoading } = useSelector((state: ReduxState) => ({ ...state.user }));
 
   useEffect(() => {
+    dispatch(getUserList());
     const handleScroll = (): void => {
       dispatch(updateIsScrollHeight(window.scrollY > 96));
     };
@@ -25,7 +29,8 @@ const App = () : JSX.Element => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  }, [dispatch]);
+
   return (
     <div>
       <HeaderComponent />
@@ -67,6 +72,6 @@ const App = () : JSX.Element => {
       <FooterComponent />
     </div>
   );
-}
+};
 
 export default App;
